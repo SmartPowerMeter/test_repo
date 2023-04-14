@@ -1,6 +1,6 @@
 pipeline {
 
-  agent {jenkins_agent}
+  agent any
 
   options {
 
