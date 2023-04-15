@@ -28,7 +28,7 @@ pipeline {
 
       when {
 
-        branch "dev"
+        branch "main"
 
       }
 
@@ -37,6 +37,7 @@ pipeline {
         sh '''
 
           cat README.md
+          echo hello world
 
         '''
 
