@@ -1,10 +1,11 @@
 pipeline {
 
-  agent any
+  agent {label "main"}
 
   options {
 
-    buildDiscarder logRotator(artifactDaysToKeepStr: '10', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')
+    buildDiscarder logRotator(artifactDaysToKeepStr: '15', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')
+    disableConcurrentBuilds()
 
   }
 
@@ -28,7 +29,7 @@ pipeline {
 
       when {
 
-        branch "dev"
+        branch "main"
 
       }
 
@@ -37,6 +38,7 @@ pipeline {
         sh '''
 
           cat README.md
+          echo hello world
 
         '''
 
